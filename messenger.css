@@ -1,0 +1,145 @@
+.panda-container {
+    text-align: left;
+    margin-bottom: 0px;
+}
+.panda{
+    font-size: 60px;
+    position: relative;
+    z-index: 3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #554c4a, #feb47b, #86a8e7, #91eae4);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.chat-container {
+    width: 400px;
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+.message {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.message.self {
+    background-color: #d1e7dd;
+    text-align: right;
+}
+
+.input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-style: italic;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-style: italic;
+}
+
+#send-button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #45a049;
+}
+
+/* Butterfly effect */
+.butterfly {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 24px;
+    opacity: 0;
+    transform: translate(-50%, 0);
+}
+
+@keyframes flutter {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-30px, -50px) rotate(10deg);
+    }
+    50% {
+        transform: translate(-60px, -100px) rotate(-10deg);
+    }
+    75% {
+        transform: translate(-90px, -150px) rotate(10deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-120px, -200px) rotate(-10deg);
+    }
+}
+
+.butterfly.animate {
+    animation: flutter 2s ease forwards;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: medium;
+    font-style: oblique;
+}
